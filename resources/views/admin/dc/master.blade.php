@@ -1,0 +1,8 @@
+@include('admin.inc.header')
+@yield('css')
+@include('admin.dc.inc.topbar')
+@include('admin.dc.inc.sidebar')
+@yield('content')
+@include('admin.inc.footer_header')
+@include('admin.inc.footer')
+@yield('script')
