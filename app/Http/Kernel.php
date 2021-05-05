@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'mayor' => \App\Http\Middleware\MayorMiddleware::class,
         'chairman' => \App\Http\Middleware\ChairmanMiddleware::class,
         'councilor' => \App\Http\Middleware\PouroAssesorMiddleware::class,
+        'member' => \App\Http\Middleware\UnionAssesorMiddleware::class,
     ];
 }

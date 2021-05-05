@@ -44,6 +44,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
               @if(Auth::user()->role == "admin")
               <li class="nav-item">
                 <a href="{{ route('dcs.index') }}" class="nav-link">
@@ -52,6 +53,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "dc")
               <li class="nav-item">
                 <a href="{{ route('unos.index') }}" class="nav-link">
@@ -60,6 +62,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "uno")
               <li class="nav-item">
                 <a href="{{ route('unionParishads.index') }}" class="nav-link">
@@ -68,6 +71,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "dc")
               <li class="nav-item">
                 <a href="{{ route('pouroAdmin.index') }}" class="nav-link">
@@ -76,6 +80,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "mayor")
               <li class="nav-item">
                 <a href="{{ route('pouro_assesors.index') }}" class="nav-link">
@@ -84,14 +89,23 @@
                 </a>
               </li>
               @endif
-              @if(Auth::user()->role == "admin" || Auth::user()->role == "pouro_assesor")
+
+              @if(Auth::user()->role == "admin" || Auth::user()->role == "chairman")
+              <li class="nav-item">
+                <a href="{{ route('union_assesors.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Union Assesor Admin</p>
+                </a>
+              </li>
+              @endif
+<!--               @if(Auth::user()->role == "admin" || Auth::user()->role == "pouro_assesor")
               <li class="nav-item">
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p></p>
                 </a>
               </li>
-              @endif
+              @endif -->
             </ul>
           </li>
 
@@ -104,6 +118,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
               @if(Auth::user()->role == "admin")
               <li class="nav-item">
                 <a href="{{ route('zilla.index') }}" class="nav-link">
@@ -112,6 +127,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "dc")
               <li class="nav-item">
                 <a href="{{ route('upazilla.index') }}" class="nav-link">
@@ -120,6 +136,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "dc")
               <li class="nav-item">
                 <a href="{{ route('pouroshava.index') }}" class="nav-link">
@@ -128,6 +145,7 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "uno")
               <li class="nav-item">
                 <a href="{{ route('union.index') }}" class="nav-link">
@@ -136,14 +154,25 @@
                 </a>
               </li>
               @endif 
+
               @if(Auth::user()->role == "admin" || Auth::user()->role == "mayor")
               <li class="nav-item">
                 <a href="{{ route('ward.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ward</p>
+                  <p>Pouroshava Ward</p>
                 </a>
               </li>
               @endif
+
+              @if(Auth::user()->role == "admin" || Auth::user()->role == "chairman")
+              <li class="nav-item">
+                <a href="{{ route('unionWard.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Union Ward</p>
+                </a>
+              </li>
+              @endif
+
               @if(Auth::user()->role == "admin")
               <li class="nav-item">
                 <a href="{{ route('module.index') }}" class="nav-link">
@@ -152,6 +181,7 @@
                 </a>
               </li>
               @endif 
+
             </ul>
           </li>
 

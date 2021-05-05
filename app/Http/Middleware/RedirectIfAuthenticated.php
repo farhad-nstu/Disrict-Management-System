@@ -32,6 +32,8 @@ class RedirectIfAuthenticated
             return redirect()->route('chairman.dashboard');
         } elseif(Auth::guard($guard)->check() && Auth::user()->role == "pouro_assesor"){
             return redirect()->route('councilor.dashboard');
+        } elseif(Auth::guard($guard)->check() && Auth::user()->role == "union_assesor"){
+            return redirect()->route('member.dashboard');
         } else {
             return $next($request);
         }

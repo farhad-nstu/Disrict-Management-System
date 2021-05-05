@@ -110,6 +110,18 @@ Route::group(['prefix'=>'mayor', 'middleware'=>['mayor', 'auth'], 'namespace'=>'
 Route::group(['prefix'=>'chairman', 'middleware'=>['chairman', 'auth'], 'namespace'=>'admin'], function(){
 
     Route::get('/dashboard', 'ChairmanController@index')->name('chairman.dashboard');
+    /// Ward ///
+    Route::resource('unionWard', 'UnionWardController');
+    Route::get('delete-unionWard/{id}', 'UnionWardController@delete_ward')->name('unionWard.delete');
+    Route::post('get-upazilla', 'UnionWardController@get_upazilla')->name('unionWard.upazilla');
+    Route::post('get-union', 'UnionWardController@get_union')->name('unionWard.union');
+
+    //// Union Assessor Admin ////
+    Route::resource('union_assesors', 'UnionAssessorController');
+    Route::get('delete/union-assesor/{id}', 'UnionAssessorController@delete_union_assesor')->name('union_assesors.delete');
+    Route::post('union-assesor/upazilla', 'UnionAssessorController@get_upazilla')->name('union_assesors.zilla.upazilla');
+    Route::post('union-assesor/union', 'UnionAssessorController@get_union')->name('union_assesors.zilla.upazilla.union');
+    Route::post('union-assesor/ward', 'UnionAssessorController@get_ward')->name('union_assesors.zilla.upazilla.union.ward');
 });
 
 Route::group(['prefix'=>'councilor', 'middleware'=>['councilor', 'auth'], 'namespace'=>'admin'], function(){
